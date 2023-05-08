@@ -4,7 +4,7 @@ import WigTemplate from "./compontents/wigtemplate";
 import WigHeader from "./compontents/wigHeader";
 import WigInput from "./compontents/wigInput";
 import WigFind from "./compontents/wigFind";
-import WigLoginButton from "./wigLoginButton";
+import WigLoginButton from "./compontents/wigLoginButton";
 
 const GlobalStyle = createGlobalStyle`body{
   background:white;

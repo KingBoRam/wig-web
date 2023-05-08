@@ -10,7 +10,7 @@ const WigTemplateBlock = styled.div`
   width: 30rem;
   height: 38rem;
   background: #d0ebff;
-  border-radius: 10rem;
+  border-radius: 8rem;
 `;
 function WigTemplate({ children }) {
   return (
