@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { MdClear } from "react-icons/md";
 import { useState } from "react";
-import { css } from "styled-components";
+
 const RemoveId = styled.span`
   display: flex;
   color: black;
@@ -29,6 +29,22 @@ const RemovePwd = styled.span`
 `;
 const InputBlock = styled.div`
   flex: 1;
+`;
+const Buttonblock = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+const CircleButton = styled.button`
+  background: white;
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  font-size: 30px;
+  border: none;
+  font-family: "BMJUA";
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 `;
 const InsertForm = styled.form``;
 const InputTextBlock = styled.div`
@@ -98,6 +114,9 @@ function WigInput() {
             <MdClear></MdClear>
           </RemovePwd>
         </InputTextBlock>
+        <Buttonblock>
+          <CircleButton type="submit">로그인</CircleButton>
+        </Buttonblock>
       </InsertForm>
     </InputBlock>
   );
