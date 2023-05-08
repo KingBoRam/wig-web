@@ -30,23 +30,6 @@ const RemovePwd = styled.span`
 const InputBlock = styled.div`
   flex: 1;
 `;
-const Buttonblock = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-const CircleButton = styled.button`
-  background: white;
-  cursor: pointer;
-  width: 120px;
-  height: 120px;
-  border-radius: 60px;
-  font-size: 30px;
-  border: none;
-  font-family: "BMJUA";
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-`;
-const InsertForm = styled.form``;
 const InputTextBlock = styled.div`
   background: white;
   padding: 10px;
@@ -91,33 +74,28 @@ function WigInput() {
   };
   return (
     <InputBlock>
-      <InsertForm>
-        <InputTextBlock className="login">
-          <Input
-            type="text"
-            placeholder="아이디"
-            value={valueId}
-            onChange={onChangeId}
-          ></Input>
-          <RemoveId revealId={revealId} onClick={onClickId}>
-            <MdClear></MdClear>
-          </RemoveId>
-        </InputTextBlock>
-        <InputTextBlock className="pwd">
-          <Input
-            type="password"
-            placeholder="비밀번호"
-            value={valuePwd}
-            onChange={onChangePwd}
-          ></Input>
-          <RemovePwd revealPwd={revealPwd} onClick={onClickPwd}>
-            <MdClear></MdClear>
-          </RemovePwd>
-        </InputTextBlock>
-        <Buttonblock>
-          <CircleButton type="submit">로그인</CircleButton>
-        </Buttonblock>
-      </InsertForm>
+      <InputTextBlock className="login">
+        <Input
+          type="text"
+          placeholder="아이디"
+          value={valueId}
+          onChange={onChangeId}
+        ></Input>
+        <RemoveId revealId={revealId} onClick={onClickId}>
+          <MdClear></MdClear>
+        </RemoveId>
+      </InputTextBlock>
+      <InputTextBlock className="pwd">
+        <Input
+          type="password"
+          placeholder="비밀번호"
+          value={valuePwd}
+          onChange={onChangePwd}
+        ></Input>
+        <RemovePwd revealPwd={revealPwd} onClick={onClickPwd}>
+          <MdClear></MdClear>
+        </RemovePwd>
+      </InputTextBlock>
     </InputBlock>
   );
 }

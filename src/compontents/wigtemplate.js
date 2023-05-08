@@ -7,10 +7,10 @@ const WigTemplateContainer = styled.div`
   justify-content: center;
 `;
 const WigTemplateBlock = styled.div`
-  width: 500px;
-  height: 600px;
+  width: 30rem;
+  height: 38rem;
   background: #d0ebff;
-  border-radius: 50px;
+  border-radius: 10rem;
 `;
 function WigTemplate({ children }) {
   return (
