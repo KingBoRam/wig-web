@@ -47,8 +47,9 @@ const Input = styled.input`
   background: white;
   width: 100%;
   border: none;
-  outline: none;
   font-size: 18px;
+  outline: none;
+  text-decoration: none;
 `;
 
 function WigInput() {
