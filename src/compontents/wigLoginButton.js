@@ -12,7 +12,7 @@ const CircleButton = styled.button`
   border-radius: 60px;
   font-size: 30px;
   border: none;
-  font-family: "BMJUA";
+  font-family: "BMJUA", serif;
   margin-top: 2rem;
   margin-bottom: 2rem;
 `;

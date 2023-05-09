@@ -7,7 +7,7 @@ const WigHeaderBlock = styled.div`
     color: white;
     text-shadow: -2px 0 #374955, 0 2px #374955, 2px 0 #374955, 0 -2px #374955;
     font-size: 55px;
-    font-family: "BMJUA";
+    font-family: "BMJUA", serif;
     font-weight: 400;
     line-height: 1.2;
   }
