@@ -1,5 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import WigLoginButton from "./wigLoginButton";
+import WigHeader from "./wigHeader";
+import WigInput from "./wigInput";
+import WigFind from "./wigFind";
+
 const WigTemplateContainer = styled.div`
   height: 100vh;
   display: flex;
@@ -12,10 +17,15 @@ const WigTemplateBlock = styled.div`
   background: #d0ebff;
   border-radius: 80px;
 `;
-function WigTemplate({ children }) {
+function WigTemplate() {
   return (
     <WigTemplateContainer>
-      <WigTemplateBlock>{children}</WigTemplateBlock>
+      <WigTemplateBlock>
+        <WigHeader></WigHeader>
+        <WigInput></WigInput>
+        <WigFind></WigFind>
+        <WigLoginButton></WigLoginButton>
+      </WigTemplateBlock>
     </WigTemplateContainer>
   );
 }

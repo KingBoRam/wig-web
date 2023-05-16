@@ -1,26 +1,18 @@
 import "./App.css";
-import { createGlobalStyle } from "styled-components";
-import WigTemplate from "./compontents/wigtemplate";
-import WigHeader from "./compontents/wigHeader";
-import WigInput from "./compontents/wigInput";
-import WigFind from "./compontents/wigFind";
-import WigLoginButton from "./compontents/wigLoginButton";
-
-const GlobalStyle = createGlobalStyle`body{
-  background:white;
-}`;
+import { Route, Routes } from "react-router-dom";
+import WigTemplate from "./components/wigtemplate";
+import FindId from "./components/findId";
+import FindPwd from "./components/findPwd";
+import SignIn from "./components/signIn";
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
-      <WigTemplate>
-        <WigHeader></WigHeader>
-        <WigInput></WigInput>
-        <WigFind></WigFind>
-        <WigLoginButton></WigLoginButton>
-      </WigTemplate>
-    </>
+    <Routes>
+      <Route path="/" element={<WigTemplate />} />
+      <Route path="/findId" element={<FindId />} />
+      <Route path="/findPwd" element={<FindPwd />} />
+      <Route path="/signIn" element={<SignIn />} />
+    </Routes>
   );
 }
 
