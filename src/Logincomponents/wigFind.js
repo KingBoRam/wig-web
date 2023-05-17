@@ -16,11 +16,11 @@ const ABlock = styled(Link)`
 function WigFind() {
   return (
     <FindBlock>
-      <ABlock to="/findId">아이디 찾기</ABlock>
+      <ABlock to="/login/findId">아이디 찾기</ABlock>
       <RxDividerVertical style={{ marginTop: "3px" }} />
-      <ABlock to="/findPwd">비밀번호 찾기</ABlock>
+      <ABlock to="/login/findPwd">비밀번호 찾기</ABlock>
       <RxDividerVertical style={{ marginTop: "3px" }} />
-      <ABlock to="/signIn">회원가입</ABlock>
+      <ABlock to="/login/register">회원가입</ABlock>
     </FindBlock>
   );
 }

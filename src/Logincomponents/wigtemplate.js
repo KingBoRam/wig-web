@@ -19,14 +19,16 @@ const WigTemplateBlock = styled.div`
 `;
 function WigTemplate() {
   return (
-    <WigTemplateContainer>
-      <WigTemplateBlock>
-        <WigHeader></WigHeader>
-        <WigInput></WigInput>
-        <WigFind></WigFind>
-        <WigLoginButton></WigLoginButton>
-      </WigTemplateBlock>
-    </WigTemplateContainer>
+    <>
+      <WigTemplateContainer>
+        <WigTemplateBlock>
+          <WigHeader></WigHeader>
+          <WigInput></WigInput>
+          <WigFind></WigFind>
+          <WigLoginButton></WigLoginButton>
+        </WigTemplateBlock>
+      </WigTemplateContainer>
+    </>
   );
 }
 export default WigTemplate;
