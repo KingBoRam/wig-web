@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const FindBlock = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 `;
 const ABlock = styled(Link)`
   color: black;

@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import WigLoginButton from "./wigLoginButton";
-import WigHeader from "./wigHeader";
-import WigInput from "./wigInput";
-import WigFind from "./wigFind";
+import WigHeader from "../components/wigHeader";
+import WigInput from "../components/wigInput";
+import WigFind from "../components/wigFind";
 
 const WigTemplateContainer = styled.div`
   height: 100vh;
@@ -17,6 +16,7 @@ const WigTemplateBlock = styled.div`
   background: #d0ebff;
   border-radius: 80px;
 `;
+
 function WigTemplate() {
   return (
     <>
@@ -25,7 +25,6 @@ function WigTemplate() {
           <WigHeader></WigHeader>
           <WigInput></WigInput>
           <WigFind></WigFind>
-          <WigLoginButton></WigLoginButton>
         </WigTemplateBlock>
       </WigTemplateContainer>
     </>
