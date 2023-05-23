@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
 
-export default function RoundCheckbox() {
-  const [isChecked, setIsChecked] = useState(false);
+export default function RoundCheckbox({ checked, text }) {
+  const [isChecked, setIsChecked] = useState(checked);
 
   const onClickCheck = () => {
     setIsChecked(!isChecked);
@@ -11,32 +11,38 @@ export default function RoundCheckbox() {
   return (
     <>
       <SCustomCheckboxWrapper>
-        <SCustomCheckbox type="checkbox" isChecked={isChecked} />
+        <SCustomCheckbox type="checkbox" chekced={checked} id="check" />
         <SCustomLabel
           onClick={onClickCheck}
           isChecked={isChecked}
+          htmlFor="check"
         ></SCustomLabel>
       </SCustomCheckboxWrapper>
+      <div>
+        <label
+          style={{
+            marginLeft: "10px",
+            fontWeight: "bold",
+            textDecoration: "underline",
+          }}
+          htmlFor="check"
+          onClick={onClickCheck}
+        >
+          {text}
+        </label>
+      </div>
     </>
   );
 }
 
 const SCustomCheckboxWrapper = styled.div`
   position: relative;
+  width: 28px;
+  height: 28px;
 `;
 
 const SCustomCheckbox = styled.input`
-  visibility: hidden;
-  ${({ isChecked }) =>
-    isChecked
-      ? css`
-          background-color: #66bb6a;
-          border-color: #66bb6a;
-          &:after: {
-            opacity: 1;
-          }
-        `
-      : null}
+  visibility: hide;
 `;
 
 const SCustomLabel = styled.label`
@@ -54,23 +60,20 @@ const SCustomLabel = styled.label`
       ? css`
           background-color: #66bb6a;
           border-color: #66bb6a;
-          &:after {
+          &:before {
+            position: absolute;
+            content: "";
+            width: 12px;
+            height: 6px;
             border: 2px solid #fff;
             border-top: none;
             border-right: none;
-            content: "";
-            height: 6px;
-            left: 7px;
-            position: absolute;
-            top: 8px;
             transform: rotate(-45deg);
-            width: 12px;
+            left: 7px;
+            top: 8px;
           }
         `
       : css`
-          background-color: #fff !important;
-          &:after {
-            opacity: 1;
-          }
+          opacity: 1;
         `}
 `;
