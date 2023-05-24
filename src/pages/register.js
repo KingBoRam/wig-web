@@ -108,7 +108,7 @@ const StyledButton = styled.button`
   ${({ disabled }) =>
     disabled
       ? css`
-          background-color: #adb5bd;
+          background-color: #9cadbc;
           color: #fff;
         `
       : css`
