@@ -3,6 +3,7 @@ import styled from "styled-components";
 import WigHeader from "../components/wigHeader";
 import WigInput from "../components/wigInput";
 import WigFind from "../components/wigFind";
+import { Link } from "react-router-dom";
 
 const WigTemplateContainer = styled.div`
   height: 100vh;
@@ -22,7 +23,9 @@ function WigTemplate() {
     <>
       <WigTemplateContainer>
         <WigTemplateBlock>
-          <WigHeader></WigHeader>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <WigHeader></WigHeader>
+          </Link>
           <WigInput></WigInput>
           <WigFind></WigFind>
         </WigTemplateBlock>

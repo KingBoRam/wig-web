@@ -1,6 +1,7 @@
 import WigHeader from "../components/wigHeader";
 import styled, { css } from "styled-components";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const RegisterTemplate = styled.div`
   display: flex;
@@ -63,9 +64,9 @@ const CustomLabel = styled.label`
           opacity: 1;
         `}
 `;
-const StyledTextArea = styled.textarea`
+const StyledTextArea = styled.div`
   width: 100%;
-  max-width: 380px;
+  max-width: 375px;
   height: 88px;
   resize: none;
   overflow: auto;
@@ -73,12 +74,25 @@ const StyledTextArea = styled.textarea`
   border: solid 1px #ced4da;
   border-radius: 5px;
   margin-left: 45px;
-  padding: 10px;
+  padding: 13px;
   font-size: 13px;
   line-height: 18px;
   letter-spacing: -0.43px;
   color: #767678;
   font-family: Dotum, Helvetica, sans-serif;
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+  &::-webkit-scrollbar-thumb {
+    height: 42px;
+    background: #999;
+    border-radius: 10px;
+    border: 6px solid #fff;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 0 6px 6px 0;
+    background-color: transparent;
+  }
 `;
 const StyledButton = styled.button`
   width: 100%;
@@ -90,6 +104,7 @@ const StyledButton = styled.button`
   border-radius: 5px;
   border: none;
   margin-top: 2rem;
+  cursor: pointer;
   ${({ disabled }) =>
     disabled
       ? css`
@@ -142,7 +157,9 @@ const Register = () => {
   return (
     <div>
       <RegisterTemplate>
-        <WigHeader></WigHeader>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <WigHeader></WigHeader>
+        </Link>
         <form>
           <CustomCheckboxWrapper>
             <div
@@ -220,7 +237,16 @@ const Register = () => {
               WIG 이용약관 동의
             </label>
           </CustomCheckboxWrapper>
-          <StyledTextArea readOnly>
+          <StyledTextArea>
+            <div
+              style={{
+                fontSize: "1rem",
+                fontWeight: "bold",
+                marginBottom: "0.5rem",
+              }}
+            >
+              여러분을 환영합니다.
+            </div>
             한 번은 아주 먼 미래의 고도로 발달한 기술로 인간들이 우주를 탐사하고
             다른 행성에 거주하는 시대가 되었을 것입니다. 그러한 미래에서
             우주선은 매우 빠른 속도로 은하계를 가로지르고, 새로운 별들과 그들의
@@ -241,7 +267,8 @@ const Register = () => {
             여정은 아직 끝나지 않았습니다. 그들은 우주의 허물을 뚫고 알 수 없는
             세계로 나아가고 있으며, 그 곳에서 새로운 발견과 모험을 찾고
             있습니다. 오리온 선원들은 자신들이 희생한 대가를 지금보다 더 나은
-            미래의 인류를 위해 지불하고 있음을 깨달았습니다. -CHAT GPT-
+            미래의 인류를 위해 지불하고 있음을 깨달았습니다.{" "}
+            <div>-CHAT GPT-</div>
           </StyledTextArea>
           <CustomCheckboxWrapper>
             <CustomCheckbox
@@ -274,7 +301,7 @@ const Register = () => {
               위치기반서비스 이용약관 동의
             </label>
           </CustomCheckboxWrapper>
-          <StyledTextArea readOnly>
+          <StyledTextArea>
             오리온 선원들은 알 수 없는 세계에서의 탐사를 계속하면서 새로운
             문명과 만남을 갖고, 그들의 테크놀로지와 문화를 공유하며 상호 교류를
             합니다. 그리고 이러한 경험을 통해 선원들은 자신들의 세계관을
@@ -287,9 +314,14 @@ const Register = () => {
             모험은 우리에게 끝없는 상상력과 열정의 가능성을 상기시킵니다. 우리는
             미래의 우주 여행과 탐사가 우리의 현재를 어떻게 변화시킬지 상상할 수
             있으며, 오리온 선원들의 이야기는 우리에게 용기와 영감을 줍니다.
-            -CHAT GPT-
+            <div>-CHAT GPT-</div>
           </StyledTextArea>
-          <StyledButton disabled={!useCheck}>다음</StyledButton>
+          <StyledButton
+            disabled={!useCheck}
+            onClick={(e) => e.preventDefault()}
+          >
+            확인
+          </StyledButton>
         </form>
       </RegisterTemplate>
     </div>
