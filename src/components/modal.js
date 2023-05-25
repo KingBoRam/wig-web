@@ -32,8 +32,9 @@ const ModalBtn = styled.button`
   border: none;
   color: black;
   cursor: pointer;
+  position: inline;
 `;
-const ExitBtn = styled.button`
+const ExitBtn = styled.span`
   border: none;
   font-size: 1.5rem;
   font-weight: bold;
@@ -46,13 +47,20 @@ const ExitBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   margin-left: auto;
 `;
 
 const Modal = ({ children, name }) => {
   const [isOpen, setIsOpen] = useState(false);
   const openModalHandler = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(true);
+  };
+
+  const closeModalHandler = (event) => {
+    if (event.target === event.currentTarget) {
+      setIsOpen(false);
+    }
   };
 
   return (
@@ -60,9 +68,9 @@ const Modal = ({ children, name }) => {
       <ModalContainer>
         <ModalBtn onClick={openModalHandler}>{name}</ModalBtn>
         {isOpen ? (
-          <ModalBackdrop onClick={openModalHandler}>
-            <ModalView onClick={(e) => e.stopPropagation()}>
-              <ExitBtn onClick={openModalHandler}>X</ExitBtn>
+          <ModalBackdrop onClick={closeModalHandler}>
+            <ModalView>
+              <ExitBtn onClick={closeModalHandler}>X</ExitBtn>
               {children}
             </ModalView>
           </ModalBackdrop>
