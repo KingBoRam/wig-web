@@ -4,9 +4,6 @@ import styled from "styled-components";
 const WigHeaderBlock = styled.div`
   h1 {
     text-align: center;
-    color: black;
-    /* text-shadow: -2px 0 #374955, 0 2px #374955, 2px 0 #374955, 0 -2px #374955; */
-    font-size: 70px;
     font-family: "KBO-Dia-Gothic_bold", serif;
     font-weight: 700;
     line-height: 1.2; /*  */
@@ -15,12 +12,15 @@ const WigHeaderBlock = styled.div`
   }
 `;
 
-function WigHeader() {
+function WigHeader({ color, fontSize }) {
   return (
-    <WigHeaderBlock>
+    <WigHeaderBlock style={{ color, fontSize }}>
       <h1>WIG</h1>
     </WigHeaderBlock>
   );
 }
-
+WigHeader.defaultProps = {
+  color: "black",
+  fontSize: "40px",
+};
 export default WigHeader;

@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { LoginState } from "../Recoil/loginstate";
+import Modal from "../components/modal";
+import WigTemplate from "./wigtemplate";
 
 const Basic = () => {
   const loginState = useRecoilValue(LoginState);
@@ -9,7 +11,9 @@ const Basic = () => {
     return (
       <>
         <div>basic</div>
-        <Link to="/login">로그인</Link>
+        <Modal name="로그인">
+          <WigTemplate></WigTemplate>
+        </Modal>
       </>
     );
   } else {

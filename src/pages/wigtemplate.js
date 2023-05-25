@@ -3,10 +3,9 @@ import styled from "styled-components";
 import WigHeader from "../components/wigHeader";
 import WigInput from "../components/wigInput";
 import WigFind from "../components/wigFind";
-import { Link } from "react-router-dom";
 
 const WigTemplateContainer = styled.div`
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,8 +13,6 @@ const WigTemplateContainer = styled.div`
 const WigTemplateBlock = styled.div`
   width: 500px;
   height: 600px;
-  background: #d0ebff;
-  border-radius: 80px;
 `;
 
 function WigTemplate() {
@@ -23,9 +20,7 @@ function WigTemplate() {
     <>
       <WigTemplateContainer>
         <WigTemplateBlock>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <WigHeader></WigHeader>
-          </Link>
+          <WigHeader color="#1971c2"></WigHeader>
           <WigInput></WigInput>
           <WigFind></WigFind>
         </WigTemplateBlock>

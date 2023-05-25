@@ -60,7 +60,8 @@ const Buttonblock = styled.div`
   justify-content: center;
 `;
 const CircleButton = styled.button`
-  background: white;
+  background: #1971c2;
+  color : white;
   cursor: pointer;
   width: 120px;
   height: 120px;
@@ -68,27 +69,29 @@ const CircleButton = styled.button`
   font-size: 30px;
   border: none;
   font-family: "KBO-Dia-Gothic_bold";, serif;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.5em;
 `;
 const IconButtonGoogle = styled.a`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  border-radius: 50%;
   background-image: url("/image/구글.png");
   background-size: cover;
   cursor: pointer;
   margin-right: 1rem;
 `;
 const IconButtonNaver = styled.a`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-image: url("/image/네이버.png");
   background-size: cover;
   cursor: pointer;
 `;
 const IconButtonKakao = styled.a`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-image: url("/image/카카오톡.png");
   background-size: cover;
   cursor: pointer;
@@ -132,55 +135,53 @@ function WigInput() {
     }
   };
   return (
-    <>
-      <InputBlock>
-        <form>
-          <InputTextBlock className="login">
-            <Input
-              type="email"
-              placeholder="이메일"
-              value={valueId}
-              onChange={onChangeId}
-            ></Input>
-            <RemoveId revealId={revealId} onClick={onClickId}>
-              <MdClear></MdClear>
-            </RemoveId>
-          </InputTextBlock>
-          <InputTextBlock className="pwd">
-            <Input
-              type="password"
-              placeholder="비밀번호"
-              value={valuePwd}
-              onChange={onChangePwd}
-            ></Input>
-            <RemovePwd revealPwd={revealPwd} onClick={onClickPwd}>
-              <MdClear></MdClear>
-            </RemovePwd>
-          </InputTextBlock>
-        </form>
-        <div
-          style={{
-            textAlign: "center",
-            marginTop: "2rem",
-            height: "21px",
-            color: "red",
-            fontSize: "0.8rem",
-          }}
-        >
-          {falseText}
-        </div>
-        <Buttonblock>
-          <CircleButton type="submit" onClick={onClick}>
-            로그인
-          </CircleButton>
-        </Buttonblock>
-        <Buttonblock>
-          <IconButtonGoogle />
-          <IconButtonKakao />
-          <IconButtonNaver />
-        </Buttonblock>
-      </InputBlock>
-    </>
+    <InputBlock>
+      <form>
+        <InputTextBlock className="login">
+          <Input
+            type="email"
+            placeholder="이메일"
+            value={valueId}
+            onChange={onChangeId}
+          ></Input>
+          <RemoveId revealId={revealId} onClick={onClickId}>
+            <MdClear></MdClear>
+          </RemoveId>
+        </InputTextBlock>
+        <InputTextBlock className="pwd">
+          <Input
+            type="password"
+            placeholder="비밀번호"
+            value={valuePwd}
+            onChange={onChangePwd}
+          ></Input>
+          <RemovePwd revealPwd={revealPwd} onClick={onClickPwd}>
+            <MdClear></MdClear>
+          </RemovePwd>
+        </InputTextBlock>
+      </form>
+      <div
+        style={{
+          textAlign: "center",
+          marginTop: "1.5rem",
+          height: "21px",
+          color: "red",
+          fontSize: "0.8rem",
+        }}
+      >
+        {falseText}
+      </div>
+      <Buttonblock>
+        <CircleButton type="submit" onClick={onClick}>
+          로그인
+        </CircleButton>
+      </Buttonblock>
+      <Buttonblock>
+        <IconButtonGoogle />
+        <IconButtonKakao />
+        <IconButtonNaver />
+      </Buttonblock>
+    </InputBlock>
   );
 }
 
