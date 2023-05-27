@@ -97,6 +97,60 @@ const IconButtonKakao = styled.a`
   cursor: pointer;
   margin-right: 1rem;
 `;
+const CustomCheckboxWrapper = styled.div`
+  position: relative;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+`;
+const CustomCheckbox = styled.input`
+  visibility: hidden;
+`;
+const CustomLabel = styled.label`
+  background-color: #fff;
+  margin-top: -0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  margin-left: 7px;
+  left: 13;
+  top: 10;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 4px;
+    border: 2px solid #ced4da;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    left: 5px;
+    top: 6px;
+  }
+  ${({ isChecked }) =>
+    isChecked
+      ? css`
+          background-color: #4dabf7;
+          border-color: #4dabf7;
+          &:before {
+            position: absolute;
+            content: "";
+            width: 8px;
+            height: 4px;
+            border: 2px solid #fff;
+            border-top: none;
+            border-right: none;
+            transform: rotate(-45deg);
+            left: 5px;
+            top: 6px;
+          }
+        `
+      : css`
+          opacity: 1;
+        `}
+`;
 function WigInput() {
   //id창에 text있으면 X 버튼
   const [valueId, setValueId] = useState("");
@@ -134,6 +188,15 @@ function WigInput() {
       setfalseText("아이디 혹은 비밀번호가 틀렸습니다.");
     }
   };
+  //로그인상태유지
+  const [loginCheck, setLoginCheckCheck] = useState(false);
+  const loginCheckBtnEvent = () => {
+    if (loginCheck === false) {
+      setLoginCheckCheck(true);
+    } else {
+      setLoginCheckCheck(false);
+    }
+  };
   return (
     <InputBlock>
       <form>
@@ -160,6 +223,29 @@ function WigInput() {
           </RemovePwd>
         </InputTextBlock>
       </form>
+      <CustomCheckboxWrapper>
+        <div>
+          <CustomCheckbox
+            type="checkbox"
+            id="all-check"
+            checked={loginCheck}
+            onChange={loginCheckBtnEvent}
+          ></CustomCheckbox>
+          <CustomLabel htmlFor="all-check" isChecked={loginCheck}></CustomLabel>
+          <label
+            style={{
+              marginLeft: "2rem",
+              fontSize: "0.8rem",
+              cursor: "pointer",
+              color: "gray",
+              marginTop: "-0.5rem",
+            }}
+            htmlFor="all-check"
+          >
+            로그인 상태 유지
+          </label>
+        </div>
+      </CustomCheckboxWrapper>
       <div
         style={{
           textAlign: "center",

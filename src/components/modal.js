@@ -8,11 +8,12 @@ const ModalContainer = styled.div`
   height: 100%;
 `;
 const ModalBackdrop = styled.div`
+  z-index: 1;
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   top: 0;
   left: 0;
   right: 0;
@@ -20,7 +21,6 @@ const ModalBackdrop = styled.div`
 `;
 const ModalView = styled.div`
   position: absolute;
-  z-index: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -62,7 +62,6 @@ const Modal = ({ children, name }) => {
       setIsOpen(false);
     }
   };
-
   return (
     <>
       <ModalContainer>
