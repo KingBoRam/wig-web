@@ -1,12 +1,12 @@
-import "./App.css";
 import { Route, Routes } from "react-router-dom";
+import "./App.css";
 import Basic from "./pages/main";
 import NotFound from "./pages/notFound";
 
 import FindId from "./pages/findId";
 import FindPwd from "./pages/findPwd";
-import Register from "./pages/register";
 import Mypage from "./pages/mypage";
+import Register from "./pages/register";
 
 function App() {
   return (
