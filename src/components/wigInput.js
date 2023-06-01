@@ -31,9 +31,6 @@ const RemovePwd = styled.span`
       display: initial;
     `}
 `;
-const InputBlock = styled.div`
-  flex: 1;
-`;
 const InputTextBlock = styled.div`
   background: white;
   padding: 10px;
@@ -108,26 +105,24 @@ const CustomCheckbox = styled.input`
 const CustomLabel = styled.label`
   background-color: #fff;
   margin-top: -0.5rem;
+  margin-left: 7px;
   border: 1px solid #ccc;
   border-radius: 50%;
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   position: absolute;
-  margin-left: 7px;
-  left: 13;
-  top: 10;
   &:before {
     position: absolute;
     content: "";
-    width: 8px;
-    height: 4px;
+    width: 7px;
+    height: 3px;
     border: 2px solid #ced4da;
     border-top: none;
     border-right: none;
     transform: rotate(-45deg);
-    left: 5px;
-    top: 6px;
+    left: 4.5px;
+    top: 5.5px;
   }
   ${({ isChecked }) =>
     isChecked
@@ -137,20 +132,21 @@ const CustomLabel = styled.label`
           &:before {
             position: absolute;
             content: "";
-            width: 8px;
-            height: 4px;
+            width: 7px;
+            height: 3px;
             border: 2px solid #fff;
             border-top: none;
             border-right: none;
             transform: rotate(-45deg);
-            left: 5px;
-            top: 6px;
+            left: 4.5px;
+            top: 5.5px;
           }
         `
       : css`
           opacity: 1;
         `}
 `;
+
 function WigInput() {
   //id창에 text있으면 X 버튼
   const [valueId, setValueId] = useState("");
@@ -198,12 +194,12 @@ function WigInput() {
     }
   };
   return (
-    <InputBlock>
+    <>
       <form>
         <InputTextBlock className="login">
           <Input
             type="email"
-            placeholder="이메일"
+            placeholder="아이디(이메일)"
             value={valueId}
             onChange={onChangeId}
           ></Input>
@@ -239,6 +235,8 @@ function WigInput() {
               cursor: "pointer",
               color: "gray",
               marginTop: "-0.5rem",
+              position: "relative",
+              top: "-0.6rem",
             }}
             htmlFor="all-check"
           >
@@ -267,7 +265,7 @@ function WigInput() {
         <IconButtonKakao />
         <IconButtonNaver />
       </Buttonblock>
-    </InputBlock>
+    </>
   );
 }
 

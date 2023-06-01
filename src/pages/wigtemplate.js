@@ -12,7 +12,7 @@ const WigTemplateContainer = styled.div`
 `;
 const WigTemplateBlock = styled.div`
   width: 500px;
-  height: 600px;
+  height: 650px;
 `;
 
 function WigTemplate() {

@@ -21,7 +21,7 @@ function WigFind() {
       <RxDividerVertical style={{ marginTop: "3px" }} />
       <ABlock to="/findPwd">비밀번호 찾기</ABlock>
       <RxDividerVertical style={{ marginTop: "3px" }} />
-      <ABlock to="/register">회원가입</ABlock>
+      <ABlock to="/agree">회원가입</ABlock>
     </FindBlock>
   );
 }
