@@ -11,6 +11,7 @@ const Basic = () => {
     return (
       <>
         <div>basic</div>
+
         <Modal name="로그인">
           <WigTemplate></WigTemplate>
         </Modal>
